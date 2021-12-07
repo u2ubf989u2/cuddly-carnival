@@ -1,0 +1,218 @@
+/**
+ * Copyright (c) 2014-present PlatformIO <contact@platformio.org>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.project-open-modal {
+  .ant-modal-body {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.project-example-description {
+  white-space: normal !important;
+  font-size: 12px;
+  color: @text-color-secondary;
+  line-height: 1.3em;
+}
+
+.project-init-carousel {
+  .ant-alert {
+    min-height: 230px;
+  }
+}
+
+.project-config-page,
+.project-list-page {
+  padding-top: 12px;
+}
+
+.project-list-page {
+  .ant-btn-group {
+    margin-right: 8px;
+  }
+
+  .quick-edit-target-container {
+    position: relative;
+
+    .quick-edit-btn {
+      vertical-align: middle;
+    }
+
+    .quick-edit {
+      display: table;
+      left: -(@input-padding-horizontal-base + @border-width-base);
+      position: absolute;
+      right: 0;
+      top: -(@input-padding-vertical-base + @border-width-base);
+
+      .input-col {
+        display: table-cell;
+        width: 100%;
+      }
+
+      .buttons {
+        display: table-cell;
+        padding-left: 8px;
+        white-space: nowrap;
+
+        .delimiter {
+          margin: 0 2px;
+        }
+        .return-icon {
+          vertical-align: middle;
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+}
+
+.project-config-page {
+  @fixedFilterWidth: 180px;
+  @filterGutter: 8px;
+
+  .form-actions-block {
+    &:extend(.pull-right);
+
+    .ant-btn-group {
+      margin-left: @filterGutter;
+    }
+  }
+
+  .search-row {
+    float: left;
+    margin-right: -@fixedFilterWidth;
+    width: 100%;
+
+    .search-block {
+      margin-right: @fixedFilterWidth;
+    }
+  }
+
+  .filter-right {
+    float: right;
+    padding: 4px 0 4px @filterGutter;
+    width: @fixedFilterWidth;
+  }
+
+  .toc {
+    .config-section-group {
+      > .ant-anchor-link-title {
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  @gutter: 32px;
+  .config-form {
+    padding-left: @gutter;
+
+    .config-section-group {
+      margin-left: -@gutter / 2;
+      text-transform: capitalize;
+    }
+
+    .ant-form-explain {
+      &:extend(small);
+      margin: -3px 0 0;
+      padding-bottom: 8px;
+    }
+
+    .ant-checkbox-wrapper {
+      &:extend(small);
+      color: @text-color-secondary;
+    }
+
+    .ant-tag {
+      &:extend(small);
+      line-height: @line-height-base;
+      margin-right: 0;
+    }
+
+    .ant-form-item {
+      margin-left: -@gutter;
+      overflow: hidden;
+      padding: 0px @gutter 5px;
+
+      &.value-overridden {
+        background-color: lighten(@layout-body-background, 2%);
+      }
+
+      &:hover {
+        background-color: lighten(@layout-body-background, 4%);
+      }
+
+      .ant-form-item-label {
+        overflow: visible;
+      }
+
+      .documentation-link {
+        @icon-size: 16px;
+        @width: @icon-size*2;
+
+        display: none;
+        font-size: @icon-size;
+        height: 82px;
+        left: -@width;
+        position: absolute;
+        text-align: center;
+        top: -2px;
+        width: @width;
+
+        .anticon {
+          color: @text-color;
+
+          &:hover {
+            color: @link-hover-color;
+          }
+        }
+      }
+
+      .remove-option-btn {
+        display: none;
+        left: -28px;
+        position: absolute;
+        top: -2px;
+      }
+
+      &:hover {
+        .documentation-link,
+        .remove-option-btn {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .add-new-option {
+    @icon-size: 14px;
+
+    margin: 0 @gutter;
+    position: relative;
+
+    .add-icon {
+      left: -(@icon-size + (@gutter - @icon-size)/2);
+      position: absolute;
+      top: (32 - @icon-size)/2;
+    }
+  }
+
+  .ant-anchor-wrapper {
+    padding-left: 7px;
+    background-color: initial;
+  }
+}
